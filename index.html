@@ -19,6 +19,18 @@
     <link rel="stylesheet" href="css/asciidoctor.css"/>
     <link rel="stylesheet" href="css/local.css"/>
     <script src="js/vendor/modernizr.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/toc.js"></script>
+    <script>
+        $(document).foundation();
+        $(document).ready(function() {
+            $('#toc').toc({
+                listType: 'ul',
+                title: '<div id="toctitle">Table of Contents</div>',
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -42,6 +54,7 @@
 
     <!-- Main Content -->
     <div class="large-12 columns" role="content">
+        <div id="toc"></div>
         <div class="sect1">
 <h2 id="why_this_guide_exists">Why This Guide Exists</h2>
 <div class="sectionbody">
@@ -645,19 +658,5 @@ If you do not create a Saved Games restore point manually, <strong>all</strong> 
         </div>
     </div>
 </footer>
-
-<script src="js/vendor/jquery.js"></script>
-<script src="js/foundation.min.js"></script>
-<script>
-    $(document).foundation();
-</script>
-<script src="js/vendor/jquery.js"></script>
-<script src="js/foundation/foundation.js"></script>
-<script>
-    $(document).foundation();
-
-    var doc = document.documentElement;
-    doc.setAttribute('data-useragent', navigator.userAgent);
-</script>
 </body>
 </html>
